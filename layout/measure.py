@@ -9,6 +9,7 @@ Note: the base unit is 'mm' but not 'pix'.
 
 """
 
+import copy
 from collections import namedtuple
 
 PointTuple = namedtuple('PointTuple', ['x', 'y', 'z'])
@@ -16,37 +17,57 @@ RectTuple = namedtuple('RectTuple', ['top', 'right', 'bottom', 'left'])
 
 
 class Measure(object):
+    PIX = 'pix'
+    MM = 'mm'
+
     def __init__(self, inner_value=None):
-        self.inner_unit = 'mm'
+        self.inner_unit = self.PIX
         self.inner_value = inner_value
-        self.pix_per_mm = None
+        self._pix_per_mm = 25
+
+    @property
+    def pix_per_mm(self):
+        return self._pix_per_mm
+
+    @pix_per_mm.setter
+    def pix_per_mm(self, pix_per_mm):
+        self._pix_per_mm = pix_per_mm
 
     @property
     def v(self):
         return self.inner_value
 
-    def set_with_mm(self, value):
+    @v.setter
+    def v(self, value):
         self.inner_value = value
 
+    def set_mm(self, value):
+        self.mm = value
+        return self
+
     @property
-    def get_with_mm(self):
+    def mm(self):
+        return self.inner_value / float(self.pix_per_mm)
+
+    @mm.setter
+    def mm(self, value):
+        self.inner_value = value * self.pix_per_mm
+
+    @property
+    def pix(self):
         return self.inner_value
 
-    def set_pix_per_mm(self, pix_per_mm):
-        self.pix_per_mm = pix_per_mm
-
-    @property
-    def get_with_pix(self):
-        if self.pix_per_mm:
-            return self.inner_value * self.pix_per_mm
-        else:
-            raise Exception("pix_per_mm is not defined, please use function set_pix_per_mm().")
-
-    def set_with_pix(self, pix):
+    @pix.setter
+    def pix(self, pix):
+        self.inner_value = pix
         if self.pix_per_mm:
             self.inner_value = float(pix) / self.pix_per_mm
         else:
             raise Exception("pix_per_mm is not defined, please use function set_pix_per_mm().")
+
+    def set_pix(self, value):
+        self.pix = value
+        return self
 
     def __repr__(self):
         return self.inner_value

@@ -37,6 +37,9 @@ class ColorMode(object):
     GREYSCALE = 'GREYSCALE'
     BIT1 = 'BIT1'
 
+    def __init__(self, mode):
+        self.mode = mode
+
 
 class PosBase(object):
 

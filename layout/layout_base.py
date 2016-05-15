@@ -44,26 +44,29 @@ class LayoutAlign(object):
 
 
 class Direction(object):
-    TO_RIGHT = 'TO_RIGHT'
-    TO_LEFT = 'TO_LEFT'
-    TO_TOP = 'TO_TOP'
-    TO_BOTTOM = 'TO_BOTTOM'
+    TO_TOP = 0
+    TO_RIGHT = 1
+    TO_BOTTOM = 2
+    TO_LEFT = 3
+
+    name_mapping = {
+        0: 'TO_TOP',
+        1: 'TO_RIGHT',
+        2: 'TO_BOTTOM',
+        3: 'TO_LEFT',
+    }
 
     def __init__(self, direction):
+        if direction not in (0, 1, 2, 3):
+            raise
         self.direction = direction
 
+    def __str__(self):
+        return self.name_mapping[self.direction]
+
     def __neg__(self):
-        if self.direction == self.TO_BOTTOM:
-            direction = self.TO_TOP
-        elif self.direction == self.TO_TOP:
-            direction = self.TO_BOTTOM
-        elif self.direction == self.TO_LEFT:
-            direction = self.TO_RIGHT
-        elif self.direction == self.TO_RIGHT:
-            direction = self.TO_LEFT
-        else:
-            raise ValueError('Wrong direction: %s' % self.direction)
-        return Direction(direction=direction)
+        dire = (self.direction + 2) % 4
+        return Direction(direction=dire)
 
     @property
     def is_horizontal(self):
@@ -72,6 +75,26 @@ class Direction(object):
     @property
     def is_vertical(self):
         return self.direction in (self.TO_BOTTOM, self.TO_TOP)
+
+    def same(self):
+        return copy.deepcopy(self)
+
+    def reversed(self):
+        return -self
+
+    def add(self):
+        dire = (self.direction + 1) % 4
+        return Direction(direction=dire)
+
+    def sub(self):
+        dire = (self.direction - 1) % 4
+        return Direction(direction=dire)
+
+    def parallel_with(self, direction):
+        return direction in (self.reversed(), self.same())
+
+    def vertically_with(self, direction):
+        return direction in (self.add(), self.sub())
 
 
 class Area(object):
