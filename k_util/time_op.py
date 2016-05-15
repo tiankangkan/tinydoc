@@ -1,6 +1,7 @@
 import datetime
 import pytz
 import tzlocal
+import random
 
 TZ_UTC = pytz.utc
 TZ_LOCAL = tzlocal.get_localzone()
@@ -8,11 +9,23 @@ TZ_LOCAL = tzlocal.get_localzone()
 
 TIME_FORMAT_DEFAULT = '%Y-%m-%d %H:%M:%S.%f'
 TIME_FORMAT_FOR_FILE = '%Y_%m_%d__%H_%M_%S_%f'
+TIME_FORMAT_UNIQUE = '%Y_%m_%d__%H_%M_%S_%f'
 
 
 def get_time_str_now(time_format):
     date_time_obj = datetime.datetime.now()
     return convert_time_obj_to_time_str(date_time_obj, time_format)
+
+
+def get_time_str_unique(time_str=None, time_obj=None, time_format=None):
+    if time_obj:
+        time_str = convert_time_obj_to_time_str(time_obj, time_format)
+    time_str = time_str or get_time_str_now(TIME_FORMAT_UNIQUE)
+    return '%s__%.8d' % (time_str, random.randrange(0, 99999999))
+
+
+def get_time_str_now_for_file():
+    return get_time_str_now(TIME_FORMAT_FOR_FILE)
 
 
 def convert_time_obj_to_time_str(date_time_obj=None, time_format=TIME_FORMAT_DEFAULT):
@@ -52,5 +65,3 @@ def convert_time_zone_with_time_str(time_str, tz_to, tz_from=None, format_from=T
 def convert_time_str_format(time_str_src, t_format_src, t_format_dst):
     time_obj = datetime.datetime.strptime(time_str_src, t_format_src)
     return time_obj.strftime(t_format_dst)
-
-

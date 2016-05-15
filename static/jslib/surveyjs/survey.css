@@ -1,0 +1,97 @@
+.sv_window {
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+  background-color: cadetblue; }
+
+.sv_window_title {
+  width: 200px;
+  height: 20px;
+  background-color: cadetblue; }
+
+.sv_main {
+  width: 100%; }
+
+.sv_page_empty {
+  height: 100px;
+  width: 100%;
+  display: table; }
+
+.sv_page_empty_content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center; }
+
+.sv_q_design {
+  pointer-events: none; }
+
+.sv_q_selected {
+  background-color: lightblue; }
+
+.sv_dragover {
+  pointer-events: none;
+  width: 100%;
+  height: 5px;
+  border: 2px dashed #000; }
+
+.sv_q {
+  width: 100%;
+  clear: none; }
+
+.sv_q_h {
+  width: 100%; }
+
+.sv_q_erbox {
+  border: solid;
+  border-width: 1px;
+  border-color: red; }
+
+.sv_q_matrix {
+  width: 100%;
+  max-width: 100%; }
+  .sv_q_matrix th, .sv_q_matrix td {
+    text-align: center;
+    vertical-align: central; }
+  .sv_q_matrix td:first-child {
+    text-align: left; }
+
+.sv_qcbc0 {
+  display: inline-block;
+  vertical-align: top; }
+
+.sv_qcbc1 {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%; }
+
+.sv_qcbc2 {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%; }
+
+.sv_qcbc3 {
+  display: inline-block;
+  vertical-align: top;
+  width: 33%; }
+
+.sv_qcbc4 {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%; }
+
+.sv_q_checkbox {
+  padding: 10px; }
+
+.sv_q_radiogroup {
+  padding: 10px; }
+
+.sv_q_rating {
+  width: 100%;
+  max-width: 100%; }
+  .sv_q_rating th, .sv_q_rating td {
+    text-align: center;
+    vertical-align: central; }
+  .sv_q_rating td:first-child {
+    text-align: right; }
+  .sv_q_rating td:last-child {
+    text-align: left; }

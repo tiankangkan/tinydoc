@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CKEditor Sample</title>
+	<script src="/jslib/ckeditor/ckeditor.js"></script>
+    <script src="/jslib/ckeditor/config.js"></script>
+    <script src="/apps/editor/js/editor.js"></script>
+</head>
+<body id="main">
+	<div id="editor">
+		<h1>Hello world!</h1>
+		<p>I'm an instance of <a href="http://ckeditor.com">CKEditor</a>.</p>
+	</div>
+</body>
+
+<script>
+    var url_sync_content = 'sync_content/';
+    var doc_editor = initEditor();
+    var data = CKEDITOR.instances.editor.getData();
+    var last_modify = Date.now();
+    var last_char_num = 0;
+    var lazy_time_ms = 5000;
+
+    doc_editor.on( 'change', function( evt ) {
+        var now = Date.now();
+        if (now - last_modify > lazy_time_ms){
+            var data = evt.editor.getData();
+            last_char_num = data.length;
+            last_modify = now;
+            handle_editor_change(data);
+        }
+    });
+
+    function check_change_of_editor(){
+        var now = Date.now();
+        var data = doc_editor.getData();
+        if (data.length != last_char_num && (now - last_modify > lazy_time_ms)){
+            last_char_num = data.length;
+            last_modify = now;
+            handle_editor_change(data);
+        }
+    }
+
+
+    function handle_editor_change(data){
+        console.log(data);
+        $.ajax({
+            url: url_sync_content,
+            type: "POST",
+            data: {
+                'edit_content': data,
+                'time_stamp': Date.now()
+            },
+            success: function(data){
+                //alert(data);
+                var resp = JSON.parse(data);
+                if (resp.status == 'error'){
+                    when_submit_fail(resp.msg)
+                }else{
+                    when_submit_success(resp);
+                }
+            }
+        })
+    }
+
+    setInterval(check_change_of_editor, 5000);
+
+</script>
+</html>

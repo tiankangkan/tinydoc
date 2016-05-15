@@ -1,0 +1,31 @@
+{
+  "name": "strip",
+  "description": "A Less Intrusive Responsive Lightbox",
+  "version": "1.6.2",
+  "homepage": "http://stripjs.com",
+  "keywords": [
+    "lightbox",
+    "modal",
+    "window",
+    "responsive",
+    "jquery",
+    "jquery-plugin"
+  ],
+  "main": [
+    "dist/js/strip.pkgd.js",
+    "dist/css/strip.css"
+  ],
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "src",
+    "/.*",
+    "bower.json",
+    "Gruntfile.js",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "jquery": "^1.11.3"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "@staaky/strip",
+  "title": "Strip",
+  "version": "1.6.2",
+  "description": "A Less Intrusive Responsive Lightbox",
+  "homepage": "http://stripjs.com",
+  "author": {
+    "name": "Nick Stakenburg",
+    "url": "http://nickstakenburg.com"
+  },
+  "keywords": [
+    "lightbox",
+    "modal",
+    "window",
+    "responsive",
+    "jquery",
+    "jquery-plugin"
+  ],
+  "licenses": [
+    {
+      "type": "CC-BY-NC-ND-3.0",
+      "url": "http://creativecommons.org/licenses/by-nc-nd/3.0/"
+    },
+    {
+      "type": "Strip Commercial License",
+      "url": "http://stripjs.com/license"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-svgmin": "^1.0.0"
+  }
+}

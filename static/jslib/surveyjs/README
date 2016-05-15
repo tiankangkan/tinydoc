@@ -1,0 +1,40 @@
+knockout-min.js 是我自己加的, 是 Survey 的依赖文件.
+
+======================
+
+http://surveyjs.org/
+
+Download survey.js library
+Insert links on js and css files. Their size is about 55k.
+<link href="css/survey.css" type="text/css" rel="stylesheet">
+<script src="js/survey.min.js"></script>
+Add a link to a KnockoutJS. It is a MVVM library. The file size is about 50k.
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+Create a survey object.
+var survey = new Survey.Survey({title: "Simple survey example",
+                triggers: [{ type: "visible", name: "used", operator: "eq", value: "Yes", questions: ["solution"] }],
+                questions: [
+                    { type: "radiogroup", name: "used", title: "Have you been running a survey on your site(s)?", isRequired: true,
+                    choices: ["Yes", "No"]},
+                    { type: "checkbox", name: "solution", title: "What do you use to run survey?",
+                        visible: false, isRequired: true, hasOther: true,
+                        choices: ["custom|Custom solution", "Survey Monkey", "Survey Gizmo"]},
+                    { type: "comment", name: "description", title: "Please tell us, what do you need from a Survey Library?" }]
+}, "surveyContainer");
+You have to pass to the constructor or render function, a JSON object and html element (or it's id). JSON object should contains the full information to allow create a Survey on the client. You may use the Survey JSON Builder to create a JSON for your Survey.
+Use onComplete event to get the result of a Survey and send it to a server. In this example, the dxSurvey.com service is used.
+survey.onComplete.add(function (s) {
+    document.getElementById("surveyContainer").innerHTML = "The survey result: " + JSON.stringify(s.data);
+    s.sendResult('e544a02f-7fff-4ffb-b62d-6a9aa16efd7c');
+});
+survey.onSendResult.add(function(s, options) {
+    if(options.success) {
+        s.getResult('d72c2b05-2449-4838-99b2-c3f0ec76da7a', 'solution');
+    }
+});
+
+survey.onGetResult.add(function(s, options) {
+    if(options.success) {
+        showChart(options.dataList);
+    }
+});
