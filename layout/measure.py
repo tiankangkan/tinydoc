@@ -9,7 +9,6 @@ Note: the base unit is 'mm' but not 'pix'.
 
 """
 
-import copy
 from collections import namedtuple
 
 PointTuple = namedtuple('PointTuple', ['x', 'y', 'z'])
@@ -19,11 +18,13 @@ RectTuple = namedtuple('RectTuple', ['top', 'right', 'bottom', 'left'])
 class Measure(object):
     PIX = 'pix'
     MM = 'mm'
+    POINT = 'point'
+    mm_per_point = 0.35146
 
-    def __init__(self, inner_value=None):
+    def __init__(self, pix_per_mm, inner_value=None):
         self.inner_unit = self.PIX
         self.inner_value = inner_value
-        self._pix_per_mm = 25
+        self._pix_per_mm = pix_per_mm
 
     @property
     def pix_per_mm(self):
@@ -52,6 +53,14 @@ class Measure(object):
     @mm.setter
     def mm(self, value):
         self.inner_value = value * self.pix_per_mm
+
+    @property
+    def point(self):
+        return int(self.mm / float(self.mm_per_point))
+
+    @point.setter
+    def point(self, value):
+        self.mm = self.mm_per_point * value
 
     @property
     def pix(self):
@@ -108,18 +117,3 @@ class MeasureRect(object):
 
     def __repr__(self):
         return str(self.to_tuple)
-
-
-class FontSize(Measure):
-    """
-    Default unit is point.
-    """
-    mm_per_point = 0.35146
-
-    def __init__(self, font_size):
-        mm_value = self.mm_per_point * font_size
-        super(FontSize, self).__init__(inner_value=mm_value)
-
-    @property
-    def get_point_size(self):
-        return int(self.inner_value / float(self.mm_per_point))

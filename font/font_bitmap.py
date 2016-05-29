@@ -216,11 +216,11 @@ if __name__ == '__main__':
     ch = u" "
     font = FontBitmap(font_path='/Users/kangtian/Documents/Master/tinydoc/res/font/hunlu.bmp')
     print font.get_rect_of_char_in_bitmap(ch)
-    ch_block = font.get_block_of_char(ch)
-    print ch_block.get_pix(x=10, y=10)
-    print ch_block.is_fill_with_color(RGB(255, 255, 255))
-    print 'Mode: %s' % ch_block.inst.mode
-    ch_block.to_file('/Users/kangtian/Documents/Master/tinydoc/render/char_zi.bmp')
+    # ch_block = font.get_block_of_char(ch)
+    # print ch_block.get_pix(x=10, y=10)
+    # print ch_block.is_fill_with_color(RGB(255, 255, 255))
+    # print 'Mode: %s' % ch_block.inst.mode
+    # ch_block.to_file('/Users/kangtian/Documents/Master/tinydoc/render/char_zi.bmp')
     t_start = time.time()
     ch_set = font.get_char_set()
     Pickle.dump(ch_set, open('ch_set_get_data.dat', 'wb'))

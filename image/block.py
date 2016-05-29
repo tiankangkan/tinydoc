@@ -141,9 +141,7 @@ class BlockWithPillow(BlockBase):
         self.color_mode = str(self.inst.mode)    # notice
 
     def resize(self, width=None, height=None):
-        print self.width, self.height
         width, height = self.get_new_width_height(self.width, self.height, width, height)
-        print width, height
         new_inst = self.inst.resize((width, height))    # para: resample=NEAREST
         return BlockWithPillow(new_inst)
 
@@ -180,14 +178,13 @@ class BlockWithPillow(BlockBase):
         height = bottom - top if bottom is not None else None
         width = right - left if right is not None else None
         width, height = self.get_new_width_height(block.width, block.height, width, height)
-        print 'h,w = (%s, %s)' % (height, width)
-        print 'block h,w = (%s, %s)' % (block.height, block.width)
         if right is not None or bottom is not None:
             block = block.resize(width=width, height=height)
         right, bottom = left + width, top + height
-        print 'paste', (top, right, bottom, left)
+        top, bottom = int(top), int(bottom)
+        left, right = int(left), int(right)
+        # print 'paste', (top, right, bottom, left)
         box = self.get_box_with(top, right, bottom, left)
-        print box
         self.inst.paste(block.inst, box)
         return self
 

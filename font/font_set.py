@@ -40,6 +40,8 @@ class Font(object):
         self.font_type = font_type
         self.is_load = False
         self.version = FONT_VERSION
+        self.ch_width = None
+        self.ch_height = None
         if do_load:
             self.load_font()
             self.is_load = True
@@ -56,6 +58,17 @@ class Font(object):
         else:
             raise ValueError('Wrong font type: %s' % self.font_type)
         self.do_after_load_font()
+
+    def do_after_load_font(self):
+        self.try_make_up_special_chars()
+        sample_ch = self.get_char('a')
+        sample_block = sample_ch.block
+        self.ch_width, self.ch_height = sample_block.width, sample_block.height
+
+    def try_make_up_special_chars(self):
+        if not self.has_char(' '):
+            font_ch = self.create_empty_font_char_with_width(width=0.5)
+            self.put_char(' ', font_ch)
 
     def load_hfont(self, font_path=None):
         ch_set = self.ch_set
@@ -78,7 +91,7 @@ class Font(object):
     def has_char(self, ch):
         return ch in self.ch_set
 
-    def get_char(self, ch, replace_ch='_'):
+    def get_char(self, ch, replace_ch=' '):
         ch = to_unicode(ch)
         if not self.is_load:
             print 'Load font %s, wait ...' % self.font_name
@@ -128,7 +141,6 @@ class Font(object):
     def load_gzip_font(self, file_path=None, file_obj=None):
         t_start = time.time()
         file_path = file_path or self.font_path
-        font_entry = None
         if file_obj:
             font_entry = Pickle.load(file_obj)
         else:
@@ -164,14 +176,6 @@ class Font(object):
         self.is_load = True
         print "<Font.load_gzip_font> Cost Time %s sec." % (time.time() - t_start)
         return self
-
-    def do_after_load_font(self):
-        self.try_make_up_special_chars()
-
-    def try_make_up_special_chars(self):
-        if not self.has_char(' '):
-            font_ch = self.create_empty_font_char_with_width(width=0.5)
-            self.put_char(' ', font_ch)
 
     def create_empty_font_char_with_width(self, width, height=1):
         sample_ch = self.get_char('a')

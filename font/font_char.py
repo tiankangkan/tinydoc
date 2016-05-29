@@ -15,12 +15,22 @@ from layout.layout_base import Direction
 
 
 class FontChar(object):
-    def __init__(self, ch, block, do_generate_info=True, mbr_rect=None):
+    def __init__(self, ch, block, do_generate_info=True, mbr_rect=None, ch_width=None, ch_height=None):
         self.ch = to_unicode(ch)
         self.block = block
         self.mbr_rect = mbr_rect
+        self._ch_width = ch_width
+        self._ch_height = ch_height
         if do_generate_info:
             self.generate_info()
+
+    @property
+    def ch_width(self):
+        return self.block.width if self._ch_width is None else self._ch_width
+
+    @property
+    def ch_height(self):
+        return self.block.height if self._ch_height is None else self._ch_height
 
     def generate_info(self):
         self.mbr_rect = self.mbr_rect or self.block.get_mbr_rect(Palette.white, sample_percent=None)
@@ -56,6 +66,5 @@ class FontChar(object):
                 valid_rect = mbr.copy()
             else:
                 raise ValueError('can not get char type.')
-
         return valid_rect
 
