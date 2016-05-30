@@ -5,71 +5,108 @@
 	<meta charset="utf-8">
 	<title>Tiny Document</title>
     <script type="text/javascript" src="/jslib/jquery/jquery-2.2.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/jslib/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+
 	<script src="/jslib/ckeditor/ckeditor.js"></script>
     <script src="/jslib/ckeditor/config.js"></script>
     <script src="/apps/editor/js/editor.js"></script>
 </head>
-<body id="main">
-	<div id="editor">
-		<h1>Hello world!</h1>
-		<p>I'm an instance of <a href="http://ckeditor.com">CKEditor</a>.</p>
-	</div>
 
-    <div id="resp">
-        <img id="resp_img" src="" style="max-width: 1000px">
+<body id="main">
+    <div style="margin: 5px 0 5px 15px">
+        <label style="padding-right: 30px"> HandWriten Document Suit</label>
+        <!--<span>| 文件名: </span>-->
+        <!--<input type="text" style="max-width: 400px" id="file_name" onchange="handle_file_name_change()">-->
+        <button class="btn btn-default" height="80%" onclick="handle_editor_change()"> 立即同步 </button>
+        <span></span>
+        <a id="pdf_download" class="btn btn-default" target="_blank"> 查看PDF </a>
     </div>
+	<div id="editor"><p>在这里编辑文本<br>下方会在大约5秒延迟后, 显示出手写文本</p></div>
+
+    <div id="image_list" style="background-color: black"></div>
+
 </body>
 
 <script>
     var url_sync_content = 'sync_content/';
+
     var doc_editor = initEditor();
-    var data = CKEDITOR.instances.editor.getData();
+    var html_content = CKEDITOR.instances.editor.getData();
     var last_modify = Date.now() - 5000000;
     var last_char_num = 0;
     var lazy_time_ms = 2000;
+    var now = new Date();
+    alert(now.toISOString());
+    var doc_identify = 'doc_' + now.toLocaleString();
+    var $image_list = $('#image_list');
+
+    $('#pdf_download').attr('href', '/data/'+ doc_identify +'/' + doc_identify + '.pdf');
+
+    function handle_file_name_change(){
+        file_name = $('#file_name').val();
+        console.log('file_name: ' + file_name);
+    }
 
     doc_editor.on( 'change', function( evt ) {
         var now = Date.now();
         if (now - last_modify > lazy_time_ms){
-            var data = evt.editor.getData();
-            last_char_num = data.length;
+            html_content = doc_editor.getData();
+            last_char_num = html_content.length;
             last_modify = now;
-            handle_editor_change(data);
+            handle_editor_change();
         }
     });
 
     function check_change_of_editor(){
         var now = Date.now();
-        var data = doc_editor.getData();
-        if (data.length != last_char_num && (now - last_modify > lazy_time_ms)){
-            last_char_num = data.length;
+        html_content = doc_editor.getData();
+        if (html_content.length != last_char_num && (now - last_modify > lazy_time_ms)){
+            last_char_num = html_content.length;
             last_modify = now;
-            handle_editor_change(data);
+            handle_editor_change();
         }
     }
 
-
-    function handle_editor_change(data){
-        console.log(data);
+    function handle_editor_change(){
+        html_content = doc_editor.getData();
+        console.log(html_content);
         $.ajax({
             url: url_sync_content,
             type: "POST",
+            dataType: 'json',
             data: {
-                'editor_content': data,
-                'time_stamp': Date.now()
+                'doc_identify': doc_identify,
+                'need_pdf': 'false',
+                'editor_content': html_content,
+                'time_stamp': Date.now(),
             },
-            success: function(data){
-                handle_resp_of_change(data);
+            success: function(resp){
+                if (resp['status'] == 'ok'){
+                    handle_resp_of_change(resp['data']);
+                } else{
+                    alert('error: when handle_editor_change()');
+                }
             }
         })
     }
 
-    function handle_resp_of_change(content){
-        $('#resp_img').attr("src", "data:image/jpeg;base64," + content);
+    function handle_resp_of_change(image_list){
+        $image_list.empty();
+        for (var i = 0; i < image_list.length; i ++){
+            content = image_list[i];
+            var image_id = 'image_' + i;
+            $image_list.append('<p style="textalign: center;"><img id="' + image_id + '" src="" style="width: 94%; margin-left: 3%; padding: 15px"></p>');
+            $('#'+image_id).attr("src", "data:image/jpeg;base64," + content);
+        }
     }
 
-    check_change_of_editor();
-    setInterval(check_change_of_editor, 5000);
+    function setSyncTimer(interval){
+        setInterval(check_change_of_editor, interval);
+    }
+
+    setTimeout(check_change_of_editor, 1000);
+    setSyncTimer(3000);
+
 
 </script>
 </html>

@@ -26,9 +26,9 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'about', groups: [ 'about' ] }
 	];
 
-	config.removeButtons = 'Superscript,SpecialChar,UIColor,TweetableText,Subscript,NumberedList';
-    config.extraPlugins = 'uploadimage';
-    config.imageUploadUrl = '/uploader/upload.php?type=Images';
+	config.extraPlugins = 'uploadimage';
+    config.uploadUrl = '/uploader/upload.php';
+	config.removeButtons = 'Superscript,SpecialChar,UIColor,TweetableText,Subscript,NumberedList,About,Blockquote,Outdent,Indent,BulletedList,RemoveFormat,Table,Anchor,Link,Unlink,Scayt,Save';
 };
 
 //CKEDITOR.editorConfig = function( config ) {

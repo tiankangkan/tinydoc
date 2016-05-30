@@ -2,13 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53d7309f-5e3a-497d-9b77-152e5cf98d45" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc_session/__init__.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/layout/page.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/layout/text.jpg" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/txt/红玫瑰与白玫瑰.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/layout/MyDoc.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/layout/MyDoc.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/layout/MyDoc_1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/layout/MyDoc_2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/layout/page_1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/layout/page_2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page.pdf" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc_session/session.py" afterPath="$PROJECT_DIR$/doc_session/session.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/editor/html_parser.py" afterPath="$PROJECT_DIR$/editor/html_parser.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/editor/views.py" afterPath="$PROJECT_DIR$/editor/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layout/layout_element.py" afterPath="$PROJECT_DIR$/layout/layout_element.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/apps/editor/js/editor.js" afterPath="$PROJECT_DIR$/static/apps/editor/js/editor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/jslib/ckeditor/config.js" afterPath="$PROJECT_DIR$/static/jslib/ckeditor/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/ckeditor/edit_page.html" afterPath="$PROJECT_DIR$/template/ckeditor/edit_page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tinydoc_service/urls.py" afterPath="$PROJECT_DIR$/tinydoc_service/urls.py" />
     </list>
     <ignored path="tinydoc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,6 +39,7 @@
     <SUITE FILE_PATH="coverage/tinydoc$views.coverage" NAME="views Coverage Results" MODIFIED="1463325690646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/editor" />
     <SUITE FILE_PATH="coverage/tinydoc$font_set.coverage" NAME="font_set Coverage Results" MODIFIED="1463413545372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/font" />
     <SUITE FILE_PATH="coverage/tinydoc$measure.coverage" NAME="measure Coverage Results" MODIFIED="1460983725552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/layout" />
+    <SUITE FILE_PATH="coverage/tinydoc$session.coverage" NAME="session Coverage Results" MODIFIED="1464521406726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/doc_session" />
     <SUITE FILE_PATH="coverage/tinydoc$test.coverage" NAME="test Coverage Results" MODIFIED="1463323035619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -40,36 +51,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="font_set.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/font/font_set.py">
+      <file leaf-file-name="edit_page.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/ckeditor/edit_page.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.176471">
+              <caret line="38" column="27" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="27" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editor.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/apps/editor/js/editor.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="3" />
+              <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+              <folding>
+                <marker date="1464509542000" expanded="true" signature="929:987" placeholder="{&quot;customConfig&quot;: 'config.js'...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/jslib/ckeditor/samples/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.09508716">
+              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout_element.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/layout/layout_element.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.740741">
-              <caret line="809" column="28" selection-start-line="809" selection-start-column="28" selection-end-line="809" selection-end-column="28" />
-              <folding>
-                <element signature="e#141#152#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="session.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc_session/session.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="36" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="36" />
-              <folding>
-                <element signature="e#145#154#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -78,63 +91,49 @@
         <entry file="file://$PROJECT_DIR$/editor/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
-              <folding>
-                <element signature="e#25#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="block.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/image/block.py">
+      <file leaf-file-name="html_parser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/editor/html_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38931298">
-              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout_page.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/layout/layout_page.py">
+      <file leaf-file-name="session.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc_session/session.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="render_api.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/render/render_api.py">
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/jslib/ckeditor/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="18" column="66" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout_element.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/layout/layout_element.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="39" selection-end-column="77" />
+              <caret line="956" column="30" selection-start-line="956" selection-start-column="30" selection-end-line="956" selection-end-column="30" />
               <folding>
                 <element signature="e#141#152#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="render_set.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/render/render_set.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
-              <folding>
-                <element signature="e#182#233#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,14 +167,9 @@
         <option value="$PROJECT_DIR$/tinydoc_serv/tinydoc_service/urls.py" />
         <option value="$PROJECT_DIR$/tinydoc_service/settings.py" />
         <option value="$PROJECT_DIR$/static/jslib/ckeditor/samples/index.html" />
-        <option value="$PROJECT_DIR$/static/jslib/ckeditor/config.js" />
         <option value="$PROJECT_DIR$/static/apps/js/editor.js" />
-        <option value="$PROJECT_DIR$/tinydoc_service/urls.py" />
-        <option value="$PROJECT_DIR$/static/apps/editor/js/editor.js" />
         <option value="$PROJECT_DIR$/editor/urls.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/editor/html_parser.py" />
-        <option value="$PROJECT_DIR$/template/ckeditor/edit_page.html" />
         <option value="$PROJECT_DIR$/font/font_bitmap.py" />
         <option value="$PROJECT_DIR$/font/font_set.py" />
         <option value="$PROJECT_DIR$/font/font_char.py" />
@@ -184,10 +178,17 @@
         <option value="$PROJECT_DIR$/layout/measure.py" />
         <option value="$PROJECT_DIR$/image/block.py" />
         <option value="$PROJECT_DIR$/doc_session.py" />
+        <option value="$PROJECT_DIR$/static/apps/editor/js/editor.js" />
+        <option value="$PROJECT_DIR$/static/apps/editor/js/config.js" />
+        <option value="$PROJECT_DIR$/static/jslib/ckeditor/config.js" />
+        <option value="$PROJECT_DIR$/tinydoc_service/urls.py" />
         <option value="$PROJECT_DIR$/tinydoc_setting.py" />
-        <option value="$PROJECT_DIR$/doc_session/session.py" />
-        <option value="$PROJECT_DIR$/layout/layout_element.py" />
         <option value="$PROJECT_DIR$/editor/views.py" />
+        <option value="$PROJECT_DIR$/doc_session/session.py" />
+        <option value="$PROJECT_DIR$/res/txt/红玫瑰与白玫瑰.txt" />
+        <option value="$PROJECT_DIR$/editor/html_parser.py" />
+        <option value="$PROJECT_DIR$/layout/layout_element.py" />
+        <option value="$PROJECT_DIR$/template/ckeditor/edit_page.html" />
       </list>
     </option>
   </component>
@@ -197,8 +198,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="438" />
-    <option name="y" value="176" />
+    <option name="x" value="83" />
+    <option name="y" value="73" />
     <option name="width" value="1846" />
     <option name="height" value="1105" />
   </component>
@@ -300,43 +301,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="image" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinydoc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinydoc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinydoc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinydoc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinydoc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinydoc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="doc_session" />
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -355,14 +320,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/txt" />
+      <recent name="$PROJECT_DIR$/static/apps/editor/js" />
       <recent name="$PROJECT_DIR$/doc_session" />
       <recent name="/usr/local/lib/python2.7/site-packages" />
       <recent name="$PROJECT_DIR$/k_util" />
-      <recent name="$PROJECT_DIR$/static/apps/editor" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.layout_element">
+  <component name="RunManager" selected="Python.session">
     <configuration default="false" name="layout_element" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -377,24 +342,6 @@
       <module name="tinydoc" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/layout/layout_element.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="html_parser" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/editor" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tinydoc" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/editor/html_parser.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -449,6 +396,24 @@
       <module name="tinydoc" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/font/font_set.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="session" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/doc_session" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tinydoc" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/doc_session/session.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -691,18 +656,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.layout_element" />
-      <item index="1" class="java.lang.String" itemvalue="Python.html_parser" />
-      <item index="2" class="java.lang.String" itemvalue="Python.render_api" />
-      <item index="3" class="java.lang.String" itemvalue="Python.views" />
-      <item index="4" class="java.lang.String" itemvalue="Python.font_set" />
+      <item index="1" class="java.lang.String" itemvalue="Python.render_api" />
+      <item index="2" class="java.lang.String" itemvalue="Python.views" />
+      <item index="3" class="java.lang.String" itemvalue="Python.font_set" />
+      <item index="4" class="java.lang.String" itemvalue="Python.session" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.layout_element" />
-        <item index="1" class="java.lang.String" itemvalue="Python.render_api" />
-        <item index="2" class="java.lang.String" itemvalue="Python.font_set" />
-        <item index="3" class="java.lang.String" itemvalue="Python.views" />
-        <item index="4" class="java.lang.String" itemvalue="Python.html_parser" />
+        <item index="0" class="java.lang.String" itemvalue="Python.session" />
+        <item index="1" class="java.lang.String" itemvalue="Python.layout_element" />
+        <item index="2" class="java.lang.String" itemvalue="Python.render_api" />
+        <item index="3" class="java.lang.String" itemvalue="Python.font_set" />
+        <item index="4" class="java.lang.String" itemvalue="Python.views" />
       </list>
     </recent_temporary>
   </component>
@@ -720,18 +685,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="438" y="176" width="1846" height="1105" extended-state="0" />
-    <editor active="false" />
+    <frame x="83" y="73" width="1846" height="1105" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22006652" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280788" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906404" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906404" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3270936" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3270936" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39901477" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -740,7 +706,6 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -762,30 +727,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/image/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image/block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/layout_element.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="628" column="46" selection-start-line="628" selection-start-column="46" selection-end-line="628" selection-end-column="46" />
-          <folding>
-            <element signature="e#141#152#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/layout/measure.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -863,20 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/jslib/ckeditor/samples/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19077902">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/jslib/ckeditor/ckeditor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.17611">
-          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/jslib/ckeditor/styles.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6431853">
@@ -884,38 +811,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/jslib/ckeditor/samples/toolbarconfigurator/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33222592">
-          <caret line="107" column="98" selection-start-line="107" selection-start-column="98" selection-end-line="107" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/jslib/ckeditor/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/apps/editor/js/editor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tinydoc_service/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.0">
           <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tinydoc_service/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5283308">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -930,13 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.90797544">
           <caret line="94" column="8" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/html_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -984,16 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/ckeditor/edit_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm50/python_stubs/348993582/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3782542">
@@ -1002,25 +884,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layout/layout_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/page_2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/font/font_char.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#142#181#0" expanded="true" />
+            <element signature="e#142#181#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1038,7 +907,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
           <folding>
-            <element signature="e#182#233#0" expanded="true" />
+            <element signature="e#182#233#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1051,11 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layout/page_1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/render/render_api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1066,67 +930,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tinydoc_setting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7350689">
-          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-          <folding>
-            <element signature="e#142#151#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/layout_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/MyDoc.info">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="33" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doc_session/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/layout_element.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.740741">
-          <caret line="809" column="28" selection-start-line="809" selection-start-column="28" selection-end-line="809" selection-end-column="28" />
-          <folding>
-            <element signature="e#141#152#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc_session/session.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="36" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="36" />
-          <folding>
-            <element signature="e#145#154#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
-          <folding>
-            <element signature="e#25#36#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1148,8 +956,156 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/image/block.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38931298">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/layout_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/layout_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/jslib/ckeditor/samples/js/sf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/jslib/ckeditor/ckeditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="189" column="31" selection-start-line="189" selection-start-column="31" selection-end-line="189" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/jslib/ckeditor/samples/toolbarconfigurator/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27416798">
+          <caret line="104" column="39" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tinydoc_setting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6183206">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tinydoc_service/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64122134">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#569#578#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/jslib/ckeditor/samples/js/sample.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45801526">
+          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/apps/editor/js/editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+          <folding>
+            <marker date="1464509542000" expanded="true" signature="929:987" placeholder="{&quot;customConfig&quot;: 'config.js'...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/txt/红玫瑰与白玫瑰.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/ckeditor/edit_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.176471">
+          <caret line="38" column="27" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc_session/session.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/jslib/ckeditor/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="18" column="66" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/layout_element.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="956" column="30" selection-start-line="956" selection-start-column="30" selection-end-line="956" selection-end-column="30" />
+          <folding>
+            <element signature="e#141#152#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/html_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/jslib/ckeditor/samples/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09508716">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
           <folding />
         </state>
       </provider>

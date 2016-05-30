@@ -25,3 +25,11 @@ class DocSession(LayoutDocumentBase):
 
     def get_session_dir_of_identify(self):
         return os.path.join(DATA_DIR, self.doc_identify)
+
+
+if __name__ == '__main__':
+    doc_identify = 'MyDocument'
+    text_content = ''
+    doc = DocSession(doc_identify=doc_identify)
+    doc.append_text(text_content)
+    doc.render(to_pdf=True, to_image=True)

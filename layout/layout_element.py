@@ -26,6 +26,10 @@ from layout_base import Area, LayoutLabel, LayoutAlign, LayoutSignal, Direction
 from measure import Measure
 
 
+DEFAULT_PIX_PER_MM = 15
+DEFAULT_MEASURE = Measure(pix_per_mm=DEFAULT_PIX_PER_MM)
+
+
 class LayoutSettingBase(object):
     def copy(self):
         return copy.deepcopy(self)
@@ -34,8 +38,8 @@ class LayoutSettingBase(object):
 class LayoutTextSetting(LayoutSettingBase):
     char_spacing_cn = 0.15
     char_spacing_en = 0.1
-    font_size_cn = 20
-    font_size_en = 16
+    font_size_cn = 24
+    font_size_en = 19
     line_spacing = 0.3
     line_direction = Direction(Direction.TO_BOTTOM)
     char_direction = Direction(Direction.TO_RIGHT)
@@ -60,10 +64,6 @@ class LayoutPageEdge(object):
         self.top, self.bottom = top, bottom
         self.left, self.right = left, right
         self.top_v, self.right_v, self.bottom_v, self.left_v = 0, 0, 0, 0
-
-
-DEFAULT_PIX_PER_MM = 25
-DEFAULT_MEASURE = Measure(pix_per_mm=DEFAULT_PIX_PER_MM)
 
 
 class LayoutPageSize(object):
@@ -731,10 +731,13 @@ class LayoutPageBase(LayoutLinearBase):
 
     def render(self, root=None):
         root = root or self
+        block = self.get_block()
         self.convert_area_to_absolute()
+
         for entry in self.get_sub_entry_list_with_labels(LayoutLabel.TEXT, find_recursive=True):
             entry.render(root=root)
 
+        # # 骨架
         # for entry in self.get_sub_entry_list_with_labels(LayoutLabel().frame_label_list, find_recursive=True):
         #     block.draw_rect(entry.owned_area_abs.rect, width=5, color=Palette.blue, draw_inside=True)
 
@@ -873,7 +876,7 @@ class RenderDocumentBase(RenderBase):
             image_list=self.image_list
         )
         with open(self.layout.get_doc_info_path(), 'wb') as fp:
-            json.dump(self.doc_info, fp, index=4)
+            json.dump(self.doc_info, fp, indent=4)
         self.layout.doc_info = self.doc_info
 
     def gen_pdf_from_image_list(self, image_list):

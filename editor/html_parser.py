@@ -3,7 +3,7 @@
 from bs4 import BeautifulSoup
 
 
-support_tag_list = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'span']
+support_tag_list = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'span', 'pre']
 
 
 def parse_html(html_str):

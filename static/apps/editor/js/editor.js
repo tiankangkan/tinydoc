@@ -9,6 +9,7 @@ if ( CKEDITOR.env.ie && CKEDITOR.env.version < 9 )
 
 var initEditor = ( function() {
     CKEDITOR.editorConfig(CKEDITOR.config);
+
     var wysiwygareaAvailable = isWysiwygareaAvailable(),
         isBBCodeBuiltIn = !!CKEDITOR.plugins.get( 'bbcode' );
 
@@ -19,14 +20,16 @@ var initEditor = ( function() {
         // :(((
         if ( isBBCodeBuiltIn ) {
             editorElement.setHtml(
-                'Hello world!\n\n' +
-                'I\'m an instance of [url=http://ckeditor.com]CKEditor[/url].'
+                '<p>在这里编辑文本~\n\n' +
+                '下方会在大约5秒延迟后, 显示出手写文本</p>'
             );
         }
 
         // Depending on the wysiwygare plugin availability initialize classic or inline editor.
         if ( wysiwygareaAvailable ) {
-            my_editor = CKEDITOR.replace( 'editor' );
+            my_editor = CKEDITOR.replace('editor', {
+                customConfig : 'config.js'
+            });
         } else {
             editorElement.setAttribute( 'contenteditable', 'true' );
             my_editor = CKEDITOR.inline( 'editor' );

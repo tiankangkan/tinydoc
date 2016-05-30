@@ -19,6 +19,8 @@ from settings import STATIC_ROOT
 from django.conf.urls import include, url, patterns
 from django.contrib import admin
 
+from tinydoc_setting import DATA_DIR
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^editor/', include(editor.urls)),
@@ -30,4 +32,8 @@ urlpatterns += patterns('django.views.static',
     url(r'^jslib/(?P<path>.*)$', 'serve', {'document_root': os.path.join(STATIC_ROOT, 'jslib')}),
     url(r'^res/(?P<path>.*)$', 'serve', {'document_root': os.path.join(STATIC_ROOT, 'res')}),
     url(r'^media/(?P<path>.*)$', 'serve', {'document_root': os.path.join(STATIC_ROOT, 'media')}),
+)
+
+urlpatterns += patterns('django.views.static',
+    url(r'^data/(?P<path>.*)$', 'serve', {'document_root': DATA_DIR}),
 )
