@@ -36,8 +36,8 @@
     var last_char_num = 0;
     var lazy_time_ms = 2000;
     var now = new Date();
-    alert(now.toISOString());
-    var doc_identify = 'doc_' + now.toLocaleString();
+    // var doc_identify = 'doc_' + now.toLocaleString();
+    var doc_identify = 'MyDocument';
     var $image_list = $('#image_list');
 
     $('#pdf_download').attr('href', '/data/'+ doc_identify +'/' + doc_identify + '.pdf');
