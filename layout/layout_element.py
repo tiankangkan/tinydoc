@@ -885,7 +885,7 @@ class RenderDocumentBase(RenderBase):
         page_width = page_size.width_mm
         pdf = FPDF(orientation='P', unit='mm', format=page_type)
         for image_path in image_list:
-            pdf.add_page(format=page_type)
+            pdf.add_page()
             pdf.image(image_path, 0, 0, page_width)
         self.pdf_path = self.layout.get_pdf_path()
         pdf.output(name=self.pdf_path)
