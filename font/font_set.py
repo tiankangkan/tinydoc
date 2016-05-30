@@ -191,7 +191,7 @@ class Font(object):
 
 class FontSet(object):
     pre_load_font_info = [
-        dict(font_path='/Users/kangtian/Documents/Master/tinydoc/res/font/hunlu.gzipf', font_type=FontType.GZIP_FONT)
+        dict(font_path=os.path.join(FONT_DIR, 'hunlu.gzipf'), font_type=FontType.GZIP_FONT)
     ]
 
     def __init__(self, default_font_name=None):
