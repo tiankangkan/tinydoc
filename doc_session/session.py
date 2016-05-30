@@ -19,6 +19,7 @@ class DocSession(LayoutDocumentBase):
     def __init__(self, doc_identify, page_edge=None, page_size=None, color_mode=None, bg_color=None):
         self.doc_identify = doc_identify
         self.session_dir = self.get_session_dir_of_identify()
+        print '======== Dir Of DocSession: %s' % self.session_dir
         make_sure_file_dir_exists(self.session_dir)
         super(DocSession, self).__init__(doc_identify=doc_identify, session_dir=self.session_dir, page_edge=page_edge,
                                          page_size=page_size, color_mode=color_mode, bg_color=bg_color)
